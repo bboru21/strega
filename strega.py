@@ -3,10 +3,12 @@ from simple_settings import settings
 from bs4 import BeautifulSoup
 import json
 import requests
-
-headers = {'user-agent': settings.USER_AGENT}
-
+import random
 from urls import URLS
+
+user_agent = random.choice(settings.USER_AGENTS)
+
+headers = {'user-agent': user_agent}
 
 best_values = []
 
