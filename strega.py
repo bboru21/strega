@@ -1,8 +1,10 @@
+import os
+from simple_settings import settings
 from bs4 import BeautifulSoup
 import json
 import requests
 
-headers = {'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36'}
+headers = {'user-agent': settings.USER_AGENT}
 
 from urls import URLS
 
