@@ -2,25 +2,9 @@ from bs4 import BeautifulSoup
 import json
 import requests
 
-# from mock_markup import VA_ABC_HTML
-
-# def logger(msg):
-#     log_file = open('log.txt', 'w+')
-#     log_file.write('%s\n' % msg)
-#     log_file.close()
-
 headers = {'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36'}
 
-urls = [
-    'https://www.abc.virginia.gov/products/vermouth/martini--rossi-extra-dry-vermouth#/product?productSize=1',
-    'https://www.abc.virginia.gov/products/vermouth/martini--rossi-rosso-sweet-vermouth#/product?productSize=2',
-    'https://www.abc.virginia.gov/products/cordials/liquore-strega#/product?productSize=0',
-    'https://www.abc.virginia.gov/products/cordials/baileys-original-irish-cream#/product?productSize=4',
-    'https://www.abc.virginia.gov/products/cordials/grand-marnier#/product?productSize=4',
-    'https://www.abc.virginia.gov/products/virginia-spirits/tullamore-dew-irish-whiskey#/product?productSize=3',
-    'https://www.abc.virginia.gov/products/cordials/cointreau#/product?productSize=3',
-    'https://www.abc.virginia.gov/products/cordials/frangelico#/product?productSize=1',
-]
+from urls import URLS
 
 best_values = []
 
@@ -30,7 +14,7 @@ def get_price_per_liter(amount, unit, price):
     return round(price/amount, 2)
 
 
-for url in urls:
+for url in URLS:
 
     page = requests.get(url, headers=headers)
     soup = BeautifulSoup(page.content, 'html.parser')
