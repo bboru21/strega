@@ -7,6 +7,7 @@ Run the bash script which will create the VirtualEnvironment and install Python 
 
 ## Usage
 Activate virtual environment: `source virtualenv/bin/activate`
+
 Run script: `python strega.py  --settings=settings_base`
 
 ## User Agents
