@@ -1,3 +1,5 @@
 *local.py
 /virtualenv/*
 *.pyc
+urls.py
+cronscript.log
