@@ -1,6 +1,12 @@
 
 # USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36'
 
+DB_USER     = None
+DB_PASSWORD = None
+DB_HOST     = None
+DB_PORT     = None
+
+
 USER_AGENTS = [
    #Chrome
     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36',
@@ -29,3 +35,6 @@ USER_AGENTS = [
     'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; Trident/6.0)',
     'Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0; .NET CLR 2.0.50727; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729)'
 ]
+
+PLACEHOLDER_YEAR = '1200' # use 1200 as placholder year as it's a leapyear outside of the modern range
+
