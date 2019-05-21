@@ -63,40 +63,4 @@ for feast in FEASTS:
                 amount=ingredient_amount,
             )
 
-# for feast in FEASTS:
-#     feast_date = feast[0]
-#     feast_name = feast[1]
-
-#     new_feast_id = Feasts.create( date=feast_date, name=feast_name )
-
-#     if len(feast) > 2:
-#         cocktails = feast[2]
-#         for cocktail in cocktails:
-#             cocktail_name = cocktail[0]
-
-#             print '**************'
-#             print cocktail_name
-#             print '**************'
-
-#             (new_cocktail_id, _) = Cocktails.get_or_create(name=cocktail_name)
-
-#             CocktailsToFeasts.create(
-#                 cocktail=new_cocktail_id,
-#                 feast=new_feast_id,
-#             )
-
-#             if len(cocktail) > 1:
-#                 for ingredient in cocktail[1]:
-#                     ingredient_amount = ingredient[0]
-#                     ingredient_name = ingredient[1]
-#                     ingredient_type = ingredient[2]
-
-#                     (new_ingredient_id, _) = Ingredients.get_or_create(name=ingredient_name, type=ingredient_type)
-
-#                     IngredientsToCocktails.create(
-#                         ingredient=new_ingredient_id,
-#                         cocktail=new_cocktail_id,
-#                         amount=ingredient_amount,
-#                     )
-
 print 'finis'
