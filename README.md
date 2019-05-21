@@ -8,6 +8,13 @@ Run the bash script which will create the VirtualEnvironment and install Python 
 ## Usage
 Activate virtual environment: `source virtualenv/bin/activate`
 
+## Create Database Tables
+`python create_database.py  --settings=settings_local`
+
+## Get Monthly Cocktails
+`python get_cocktails.py  --settings=settings_local`
+
+## Get ABC Prices
 Run script: `python strega.py  --settings=settings_base`
 
 ## User Agents
