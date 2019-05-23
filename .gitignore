@@ -3,3 +3,5 @@
 *.pyc
 urls.py
 cronscript.log
+chromedriver*
+.DS_Store
