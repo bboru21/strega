@@ -22,6 +22,49 @@ from data import (
     FEASTS,
 )
 
+CONTROLLED_BEVERAGE_TYPES = [
+    "gin",
+    "bourbon",
+    "brandy",
+    "liqueur",
+    "absinthe",
+    "bitters",
+    "rum",
+    "vodka",
+    "aperitif",
+    "whiskey",
+    "chocolate cherry liqueur",
+    "vanilla flavored vodka",
+    "coffee liqueur",
+    "cream liqueur",
+    "caramel flavored vodka",
+    "dry vermouth",
+    "sweet vermouth",
+    "orange flavored liqueur",
+    "orange bitters",
+    "tequila blanco",
+    "elderflower liqueur",
+    "orange liqueur",
+    "bitter herbal liqueur",
+    "light rum",
+    "sweet liqueur",
+    "151-proof rum",
+    "dry sparkling wine",
+]
+
+PURCHASED_BEVERAGE_TYPES = [
+    "gin",
+    "liqueur",
+    "bitters",
+    "vodka",
+    "whiskey",
+    "dry vermouth",
+    "sweet vermouth",
+    "orange flavored liqueur",
+    "tequila blanco",
+    "orange liqueur",
+]
+
 # Connect to our database.
 db.connect()
 
@@ -55,7 +98,16 @@ for feast in FEASTS:
             ingredient_name = ingredient.get('name')
             ingredient_type = ingredient.get('type')
 
-            (new_ingredient_id, _) = Ingredients.get_or_create(name=ingredient_name, type=ingredient_type)
+            # probably want to move this out, but keeping here for now
+            is_controlled = (ingredient_type in CONTROLLED_BEVERAGE_TYPES)
+            is_purchased = (ingredient_type in PURCHASED_BEVERAGE_TYPES)
+
+            (new_ingredient_id, _) = Ingredients.get_or_create(
+                name=ingredient_name,
+                type=ingredient_type,
+                is_controlled=is_controlled,
+                is_purchased=is_purchased,
+            )
 
             IngredientsToCocktails.create(
                 ingredient=new_ingredient_id,

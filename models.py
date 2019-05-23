@@ -29,6 +29,8 @@ class Ingredients(Model):
     ingredient_id = AutoField( primary_key=True )
     name = TextField()
     type = TextField()
+    is_controlled = BooleanField(default=False)
+    is_purchased = BooleanField(default=False)
     class Meta:
         database = db
         table_name = 'STREGA_INGREDIENTS'
