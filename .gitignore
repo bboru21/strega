@@ -1,7 +1,7 @@
 *local.py
 /virtualenv/*
+/venv/*
 *.pyc
-urls.py
 cronscript.log
 chromedriver*
 .DS_Store
