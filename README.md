@@ -26,3 +26,8 @@ With [VirtualEnv activated](#activate-virtualenv), run:
 ```
 (venv) strega/strega$ python3 manage.py migrate
 ```
+
+# Make Migrations
+```
+(venv) strega/strega$ python3 manage.py makemigrations bevendo
+```
